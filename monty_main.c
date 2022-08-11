@@ -96,12 +96,12 @@ void err(void)
 }
 
 /**
- * pushOp - helper for push operation; sets value for new node
+ * pushpoop - helper for push operation; sets value for new node
  * @stack: linked list stack to push to
  * @line_number: current line number of bytecode file
  * @pushNum: number to add to new node
  */
-void pushOp(stack_t **stack, unsigned int line_number, char *pushNum)
+void pushpoop(stack_t **stack, unsigned int line_number, char *pushNum)
 {
 	if (strcmp(pushNum, "0") == 0)
 		(*stack)->n = 0;
