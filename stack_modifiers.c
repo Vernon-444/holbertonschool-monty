@@ -23,23 +23,23 @@ void monty_push(stack_t **stack, unsigned int line_number)
 		return;
 	}
 
-	if (op_toks[1] == NULL)
+	if (op_tokens[1] == NULL)
 	{
 		set_op_tok_error(no_int_error(line_number));
 		return;
 	}
 
-	for (i = 0; op_toks[1][i]; i++)
+	for (i = 0; op_tokens[1][i]; i++)
 	{
-		if (op_toks[1][i] == '-' && i == 0)
+		if (op_tokens[1][i] == '-' && i == 0)
 			continue;
-		if (op_toks[1][i] < '0' || op_toks[1][i] > '9')
+		if (op_tokens[1][i] < '0' || op_tokens[1][i] > '9')
 		{
 			set_op_tok_error(no_int_error(line_number));
 			return;
 		}
 	}
-	new->n = atoi(op_toks[1]);
+	new->n = atoi(op_tokens[1]);
 
 	if (check_mode(*stack) == STACK) /* STACK mode insert at front */
 	{

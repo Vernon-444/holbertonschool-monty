@@ -12,14 +12,14 @@ void set_op_tok_error(int error_code)
 
 	toks_len = token_arr_len();
 	new_toks = malloc(sizeof(char *) * (toks_len + 2));
-	if (!op_toks)
+	if (!op_tokens)
 	{
 		malloc_error();
 		return;
 	}
 	while (i < toks_len)
 	{
-		new_toks[i] = op_toks[i];
+		new_toks[i] = op_tokens[i];
 		i++;
 	}
 	exit_str = get_int(error_code);
@@ -31,6 +31,6 @@ void set_op_tok_error(int error_code)
 	}
 	new_toks[i++] = exit_str;
 	new_toks[i] = NULL;
-	free(op_toks);
-	op_toks = new_toks;
+	free(op_tokens);
+	op_tokens = new_toks;
 }
